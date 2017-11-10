@@ -87,33 +87,14 @@
     ]
   },
   "templating": {
-    "list": [
-      {
-        "allValue": null,
-        "current": {},
-        "datasource": "${DS_MONASCA}",
-        "hide": 0,
-        "includeAll": true,
-        "label": "Exchange",
-        "multi": true,
-        "name": "exchange",
-        "options": [],
-        "query": "exchange",
-        "refresh": 1,
-        "regex": "",
-        "sort": 1,
-        "tagValuesQuery": null,
-        "tagsQuery": null,
-        "type": "query"
-      }
-    ]
+    "list": []
   },
   "annotations": {
     "list": []
   },
   "refresh": false,
   "schemaVersion": 13,
-  "version": 14,
+  "version": 17,
   "links": [],
   "gnetId": null,
   "rows": [
@@ -154,11 +135,11 @@
           "targets": [
             {
               "aggregator": "avg",
-              "alias": "@exchange @hostname",
+              "alias": "@exchange@@hostname",
               "dimensions": [
                 {
                   "key": "exchange",
-                  "value": "$exchange"
+                  "value": "$all"
                 },
                 {
                   "key": "hostname",
@@ -168,7 +149,7 @@
               "error": "",
               "group": false,
               "metric": "rabbitmq.exchange.messages.published_rate",
-              "period": "60",
+              "period": "300",
               "refId": "A"
             }
           ],
@@ -240,11 +221,11 @@
           "targets": [
             {
               "aggregator": "avg",
-              "alias": "@exchange @hostname",
+              "alias": "@exchange@@hostname",
               "dimensions": [
                 {
                   "key": "exchange",
-                  "value": "$exchange"
+                  "value": "$all"
                 },
                 {
                   "key": "hostname",
@@ -253,7 +234,7 @@
               ],
               "error": "",
               "metric": "rabbitmq.exchange.messages.received_rate",
-              "period": "60",
+              "period": "300",
               "refId": "A"
             }
           ],
@@ -338,7 +319,7 @@
               ],
               "error": "",
               "metric": "rabbitmq.queue.messages.deliver_rate",
-              "period": "60",
+              "period": "300",
               "refId": "A"
             },
             {
@@ -352,7 +333,7 @@
               ],
               "error": "",
               "metric": "rabbitmq.queue.messages.publish_rate",
-              "period": "60",
+              "period": "300",
               "refId": "B"
             },
             {
@@ -366,7 +347,7 @@
               ],
               "error": "",
               "metric": "rabbitmq.queue.messages.redeliver_rate",
-              "period": "60",
+              "period": "300",
               "refId": "C"
             }
           ],
@@ -465,7 +446,7 @@
               "error": "",
               "group": false,
               "metric": "process.cpu_perc",
-              "period": "60",
+              "period": "300",
               "refId": "A"
             }
           ],
@@ -550,7 +531,7 @@
               ],
               "error": "",
               "metric": "process.mem.rss_mbytes",
-              "period": "60",
+              "period": "300",
               "refId": "A"
             }
           ],
@@ -639,7 +620,7 @@
               ],
               "error": "",
               "metric": "process.io.read_kbytes",
-              "period": "60",
+              "period": "300",
               "refId": "A"
             },
             {
@@ -658,7 +639,7 @@
               "error": "",
               "group": false,
               "metric": "process.io.write_kbytes",
-              "period": "60",
+              "period": "300",
               "refId": "B"
             }
           ],
