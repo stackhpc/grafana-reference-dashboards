@@ -58,8 +58,8 @@
   "sharedCrosshair": false,
   "hideControls": true,
   "time": {
-    "from": "2017-11-10T08:35:00.503Z",
-    "to": "2017-11-10T10:16:34.901Z"
+    "from": "now-2d",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -113,7 +113,7 @@
   },
   "refresh": false,
   "schemaVersion": 13,
-  "version": 13,
+  "version": 14,
   "links": [],
   "gnetId": null,
   "rows": [
@@ -1210,7 +1210,7 @@
               ],
               "error": "",
               "group": false,
-              "metric": "load.avg_1_min",
+              "metric": "load.avg_15_min",
               "period": "300",
               "refId": "A"
             },
@@ -1225,7 +1225,7 @@
               ],
               "error": "",
               "group": false,
-              "metric": "load.avg_1_min",
+              "metric": "load.avg_15_min",
               "period": "300",
               "refId": "B"
             },
@@ -1240,7 +1240,7 @@
               ],
               "error": "",
               "group": false,
-              "metric": "load.avg_1_min",
+              "metric": "load.avg_15_min",
               "period": "300",
               "refId": "C"
             }
@@ -1248,7 +1248,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "1m Load Average (Host)",
+          "title": "15m Load Average (Host)",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -1264,7 +1264,7 @@
           },
           "yaxes": [
             {
-              "format": "percent",
+              "format": "none",
               "label": null,
               "logBase": 1,
               "max": null,
