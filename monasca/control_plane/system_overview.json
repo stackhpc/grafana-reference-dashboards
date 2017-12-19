@@ -12,12 +12,12 @@
         "rows": [
             {
                 "collapse": false,
-                "height": "250",
+                "height": 250,
                 "panels": [
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
@@ -42,21 +42,22 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 6,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "avg",
+                                "aggregator": "none",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
-                                        "value": "$all"
+                                        "value": "$hostname"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "cpu.percent",
+                                "group": false,
+                                "metric": "cpu.user_perc",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -64,7 +65,7 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "CPU usage",
+                        "title": "CPU Usage (User)",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -100,7 +101,270 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 10,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$hostname"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "cpu.system_perc",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "CPU Usage (System)",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "percent",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 9,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$hostname"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "cpu.frequency_mhz",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "CPU Frequency",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "none",
+                                "label": "MHz",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 8,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$hostname"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "mem.free_mb",
+                                "period": "30",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Available Memory",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "decmbytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
@@ -130,24 +394,24 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "avg",
+                                "aggregator": "none",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
-                                        "value": "$all"
+                                        "value": "$hostname"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "mem.usable_perc",
-                                "period": "300",
+                                "metric": "mem.swap_free_mb",
+                                "period": "30",
                                 "refId": "A"
                             }
                         ],
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Available Memory (%)",
+                        "title": "Available Swap",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -163,7 +427,7 @@
                         },
                         "yaxes": [
                             {
-                                "format": "percent",
+                                "format": "decmbytes",
                                 "label": "",
                                 "logBase": 1,
                                 "max": null,
@@ -195,21 +459,21 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
-                        "id": 4,
+                        "id": 11,
                         "legend": {
                             "alignAsTable": true,
                             "avg": false,
                             "current": false,
-                            "max": true,
+                            "max": false,
                             "min": false,
                             "rightSide": true,
                             "show": true,
                             "total": false,
-                            "values": true
+                            "values": false
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -225,24 +489,28 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "max",
-                                "alias": "@hostname",
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
-                                        "value": "$all"
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
+                                        "value": "mlx5_0"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "net.in_bytes_sec",
-                                "period": "30",
+                                "metric": "ibnet.port_rcv_data",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Inbound Network Traffic (maximum  of all devices)",
+                        "title": "Inbound Infiniband Network Traffic",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -258,7 +526,200 @@
                         },
                         "yaxes": [
                             {
-                                "format": "bps",
+                                "format": "Bps",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 12,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
+                                        "value": "mlx5_0"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "ibnet.port_xmit_data",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Outband Infiniband Network  Traffic",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "Bps",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 249,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 4,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "net.in_bytes_sec",
+                                "period": "30",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "dimensions": [],
+                                "error": "No metric specified",
+                                "period": "300",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Inbound Network Traffic",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "Bps",
                                 "label": "",
                                 "logBase": 1,
                                 "max": null,
@@ -278,7 +739,7 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
@@ -287,13 +748,12 @@
                             "alignAsTable": true,
                             "avg": false,
                             "current": false,
-                            "hideZero": false,
-                            "max": true,
+                            "max": false,
                             "min": false,
                             "rightSide": true,
                             "show": true,
                             "total": false,
-                            "values": true
+                            "values": false
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -303,39 +763,34 @@
                         "pointradius": 5,
                         "points": false,
                         "renderer": "flot",
-                        "seriesOverrides": [
-                            {}
-                        ],
+                        "seriesOverrides": [],
                         "span": 6,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "max",
-                                "alias": "@hostname",
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "net.out_bytes_sec",
+                                "metric": "net.in_bytes_sec",
                                 "period": "30",
                                 "refId": "A"
                             }
                         ],
-                        "thresholds": [
-                            {
-                                "colorMode": "critical",
-                                "fill": true,
-                                "line": true,
-                                "op": "gt"
-                            }
-                        ],
+                        "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Outbound Network Traffic (maximum of all devices)",
+                        "title": "Outbound Network Traffic",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -351,7 +806,7 @@
                         },
                         "yaxes": [
                             {
-                                "format": "bps",
+                                "format": "Bps",
                                 "label": "",
                                 "logBase": 1,
                                 "max": null,
@@ -383,7 +838,7 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
@@ -413,17 +868,21 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "avg",
-                                "alias": "@hostname",
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "metric": "disk.space_used_perc",
-                                "period": "300",
+                                "period": "30",
                                 "refId": "A"
                             }
                         ],
@@ -466,7 +925,7 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
@@ -496,17 +955,21 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "avg",
-                                "alias": "@hostname",
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "metric": "io.write_kbytes_sec",
-                                "period": "300",
+                                "period": "30",
                                 "refId": "A"
                             }
                         ],
@@ -549,7 +1012,7 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca",
+                        "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
                         "fill": 1,
@@ -579,17 +1042,21 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "avg",
-                                "alias": "@hostname",
+                                "aggregator": "none",
+                                "alias": "@hostname @device",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
+                                        "value": "$hostname"
+                                    },
+                                    {
+                                        "key": "device",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "metric": "io.read_kbytes_sec",
-                                "period": "300",
+                                "period": "30",
                                 "refId": "A"
                             }
                         ],
@@ -643,10 +1110,32 @@
         "style": "dark",
         "tags": [],
         "templating": {
-            "list": []
+            "list": [
+                {
+                    "allValue": null,
+                    "current": {
+                        "text": "All",
+                        "value": "$__all"
+                    },
+                    "datasource": "Monasca API",
+                    "hide": 0,
+                    "includeAll": true,
+                    "label": "Hostname",
+                    "multi": true,
+                    "name": "hostname",
+                    "options": [],
+                    "query": "hostname",
+                    "refresh": 1,
+                    "regex": "",
+                    "sort": 0,
+                    "tagValuesQuery": null,
+                    "tagsQuery": null,
+                    "type": "query"
+                }
+            ]
         },
         "time": {
-            "from": "now-6h",
+            "from": "now-3h",
             "to": "now"
         },
         "timepicker": {
@@ -676,19 +1165,19 @@
         },
         "timezone": "browser",
         "title": "System Overview",
-        "version": 1
+        "version": 3
     },
     "meta": {
         "canEdit": true,
         "canSave": true,
         "canStar": true,
-        "created": "2017-11-13T14:32:08Z",
-        "createdBy": "admin",
+        "created": "2017-12-19T15:39:42Z",
+        "createdBy": "dougkcl@Kcl",
         "expires": "0001-01-01T00:00:00Z",
         "slug": "system-overview",
         "type": "db",
-        "updated": "2017-12-12T14:43:14Z",
-        "updatedBy": "admin",
-        "version": 1
+        "updated": "2017-12-19T15:41:59Z",
+        "updatedBy": "dougkcl@Kcl",
+        "version": 3
     }
 }
