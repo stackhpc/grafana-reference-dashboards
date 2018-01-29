@@ -1,0 +1,160 @@
+{
+    "dashboard": {
+        "annotations": {
+            "list": []
+        },
+        "description": "Gantt chart of SLURM jobs (beta)",
+        "editable": true,
+        "gnetId": null,
+        "hideControls": false,
+        "id": null,
+        "links": [],
+        "refresh": false,
+        "rows": [
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "backgroundColor": "rgba(128, 128, 128, 0.1)",
+                        "colorMaps": [
+                            {
+                                "color": "rgb(40, 41, 40)",
+                                "text": "Idle"
+                            }
+                        ],
+                        "datasource": "Monasca API",
+                        "display": "timeline",
+                        "editable": true,
+                        "error": false,
+                        "expandFromQueryS": 200,
+                        "extendLastValue": true,
+                        "highlightOnMouseover": true,
+                        "id": 2,
+                        "legendMaxValues": 4,
+                        "legendSortBy": "-ms",
+                        "lineColor": "rgba(128, 128, 128, 1.0)",
+                        "links": [],
+                        "mappingTypes": [
+                            {
+                                "name": "value to text",
+                                "value": 1
+                            },
+                            {
+                                "name": "range to text",
+                                "value": 2
+                            }
+                        ],
+                        "metricNameColor": "rgb(212, 198, 198)",
+                        "rangeMaps": [
+                            {
+                                "from": "null",
+                                "text": "N/A",
+                                "to": "null"
+                            }
+                        ],
+                        "rowHeight": 20,
+                        "showDistinctCount": false,
+                        "showLegend": false,
+                        "showLegendCounts": false,
+                        "showLegendNames": true,
+                        "showLegendPercent": false,
+                        "showLegendTime": false,
+                        "showLegendValues": true,
+                        "showTransitionCount": false,
+                        "span": 12,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@device",
+                                "dimensions": [
+                                    {
+                                        "key": "device",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "slurm.job_status",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "textSize": 12,
+                        "title": "Slurm Jobs",
+                        "type": "natel-discrete-panel",
+                        "valueMaps": [
+                            {
+                                "op": "=",
+                                "text": "Idle",
+                                "value": "0"
+                            }
+                        ],
+                        "valueTextColor": "#000000",
+                        "writeAllValues": true,
+                        "writeLastValue": false,
+                        "writeMetricNames": true
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            }
+        ],
+        "schemaVersion": 13,
+        "sharedCrosshair": false,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+            "list": []
+        },
+        "time": {
+            "from": "now-24h",
+            "to": "now"
+        },
+        "timepicker": {
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "time_options": [
+                "5m",
+                "15m",
+                "1h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ]
+        },
+        "timezone": "browser",
+        "title": "SLURM jobs",
+        "version": 5
+    },
+    "meta": {
+        "canEdit": true,
+        "canSave": true,
+        "canStar": true,
+        "created": "2018-01-26T15:25:02Z",
+        "createdBy": "admin",
+        "expires": "0001-01-01T00:00:00Z",
+        "slug": "slurm-jobs",
+        "type": "db",
+        "updated": "2018-01-29T13:27:14Z",
+        "updatedBy": "admin",
+        "version": 5
+    }
+}

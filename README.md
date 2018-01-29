@@ -10,9 +10,25 @@ or via a browser. It is recommended to use curl to maintain consistent formattin
 Download a dashboard via Curl
 -----------------------------
 
-By piping the output to json.tool it is easier to diff changes between dashboards.
+First switch to the organisation containing your dashboard. You can do this by
+listing the current organisations (you will need the grafana_admin password):
 
-Example command (you will need the grafana_admin password):
+```
+$ curl http://1.2.3.4:3000/api/orgs -u grafana-admin
+Enter host password for user 'grafana-admin':
+[{"id":3,"name":"admin@default"},{"id":2,"name":"monasca@default"}]
+```
+
+And then switching to the id of the one you require:
+
+```
+$ curl -X POST http://1.2.3.4:3000/api/user/using/2 -u grafana-admin
+Enter host password for user 'grafana-admin':
+```
+
+Now you can download the dashboard from the required organisation. By
+piping the output to json.tool it is easier to diff changes between
+dashboards:
 
 ```
 curl http://127.0.0.1:53000/api/dashboards/db/system-overview -u grafana_admin | python -m json.tool > system_overview.json
