@@ -498,7 +498,7 @@
                                     },
                                     {
                                         "key": "device",
-                                        "value": "mlx5_0"
+                                        "value": "$all"
                                     }
                                 ],
                                 "error": "",
@@ -585,7 +585,7 @@
                                     },
                                     {
                                         "key": "device",
-                                        "value": "mlx5_0"
+                                        "value": "$all"
                                     }
                                 ],
                                 "error": "",
