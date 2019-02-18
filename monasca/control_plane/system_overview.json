@@ -597,7 +597,7 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Outband Infiniband Network  Traffic",
+                        "title": "Outbound Infiniband Network Traffic",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -782,7 +782,7 @@
                                     }
                                 ],
                                 "error": "",
-                                "metric": "net.in_bytes_sec",
+                                "metric": "net.out_bytes_sec",
                                 "period": "30",
                                 "refId": "A"
                             }
