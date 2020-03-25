@@ -6,6 +6,7 @@
         "description": "Ceph Cluster all-in-one",
         "editable": true,
         "gnetId": 2604,
+        "graphTooltip": 0,
         "hideControls": false,
         "id": null,
         "links": [],
@@ -13,7 +14,7 @@
         "rows": [
             {
                 "collapse": false,
-                "height": "125",
+                "height": 262,
                 "panels": [
                     {
                         "cacheTimeout": null,
@@ -76,7 +77,7 @@
                                 "aggregator": "avg",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.health_status",
+                                "metric": "ceph_health_status",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -109,22 +110,22 @@
                         "colorBackground": false,
                         "colorValue": false,
                         "colors": [
-                            "rgba(245, 54, 54, 0.9)",
+                            "rgba(50, 172, 45, 0.97)",
                             "rgba(237, 129, 40, 0.89)",
-                            "rgba(50, 172, 45, 0.97)"
+                            "rgba(245, 54, 54, 0.9)"
                         ],
                         "datasource": "Monasca API",
                         "editable": true,
                         "error": false,
-                        "format": "none",
+                        "format": "percentunit",
                         "gauge": {
-                            "maxValue": 100,
+                            "maxValue": 1,
                             "minValue": 0,
                             "show": true,
                             "thresholdLabels": false,
                             "thresholdMarkers": true
                         },
-                        "id": 19,
+                        "id": 43,
                         "interval": null,
                         "links": [],
                         "mappingType": 1,
@@ -161,15 +162,15 @@
                         },
                         "targets": [
                             {
-                                "aggregator": "avg",
+                                "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.utilization_perc",
+                                "metric": "ceph_cluster_usage",
                                 "period": "300",
                                 "refId": "A"
                             }
                         ],
-                        "thresholds": "",
+                        "thresholds": "0.6,0.85",
                         "title": "Storage Utilised (%)",
                         "type": "singlestat",
                         "valueFontSize": "80%",
@@ -180,7 +181,7 @@
                                 "value": "null"
                             }
                         ],
-                        "valueName": "avg"
+                        "valueName": "current"
                     },
                     {
                         "cacheTimeout": null,
@@ -243,7 +244,7 @@
                                 "aggregator": "avg",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.total_bytes",
+                                "metric": "ceph_cluster_total_bytes",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -319,11 +320,11 @@
                         },
                         "targets": [
                             {
-                                "aggregator": "avg",
+                                "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.total_used_bytes",
-                                "period": "300",
+                                "metric": "ceph_cluster_total_used_bytes",
+                                "period": "0",
                                 "refId": "A"
                             }
                         ],
@@ -338,178 +339,8 @@
                                 "value": "null"
                             }
                         ],
-                        "valueName": "avg"
-                    },
-                    {
-                        "cacheTimeout": null,
-                        "colorBackground": false,
-                        "colorValue": false,
-                        "colors": [
-                            "rgba(245, 54, 54, 0.9)",
-                            "rgba(237, 129, 40, 0.89)",
-                            "rgba(50, 172, 45, 0.97)"
-                        ],
-                        "datasource": "Monasca API",
-                        "decimals": 2,
-                        "editable": true,
-                        "error": false,
-                        "format": "decbytes",
-                        "gauge": {
-                            "maxValue": 100,
-                            "minValue": 0,
-                            "show": false,
-                            "thresholdLabels": false,
-                            "thresholdMarkers": true
-                        },
-                        "id": 18,
-                        "interval": null,
-                        "links": [],
-                        "mappingType": 1,
-                        "mappingTypes": [
-                            {
-                                "name": "value to text",
-                                "value": 1
-                            },
-                            {
-                                "name": "range to text",
-                                "value": 2
-                            }
-                        ],
-                        "maxDataPoints": 100,
-                        "nullPointMode": "connected",
-                        "nullText": null,
-                        "postfix": "",
-                        "postfixFontSize": "50%",
-                        "prefix": "",
-                        "prefixFontSize": "50%",
-                        "rangeMaps": [
-                            {
-                                "from": "null",
-                                "text": "N/A",
-                                "to": "null"
-                            }
-                        ],
-                        "span": 2,
-                        "sparkline": {
-                            "fillColor": "rgba(31, 118, 189, 0.18)",
-                            "full": false,
-                            "lineColor": "rgb(31, 120, 193)",
-                            "show": true
-                        },
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "dimensions": [],
-                                "error": "",
-                                "metric": "ceph.cluster.total_avail_bytes",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": "",
-                        "title": "Space Available",
-                        "type": "singlestat",
-                        "valueFontSize": "80%",
-                        "valueMaps": [
-                            {
-                                "op": "=",
-                                "text": "N/A",
-                                "value": "null"
-                            }
-                        ],
-                        "valueName": "avg"
-                    },
-                    {
-                        "cacheTimeout": null,
-                        "colorBackground": false,
-                        "colorValue": false,
-                        "colors": [
-                            "rgba(245, 54, 54, 0.9)",
-                            "rgba(237, 129, 40, 0.89)",
-                            "rgba(50, 172, 45, 0.97)"
-                        ],
-                        "datasource": "Monasca API",
-                        "decimals": 0,
-                        "editable": true,
-                        "error": false,
-                        "format": "none",
-                        "gauge": {
-                            "maxValue": 100,
-                            "minValue": 0,
-                            "show": false,
-                            "thresholdLabels": false,
-                            "thresholdMarkers": true
-                        },
-                        "id": 22,
-                        "interval": null,
-                        "links": [],
-                        "mappingType": 1,
-                        "mappingTypes": [
-                            {
-                                "name": "value to text",
-                                "value": 1
-                            },
-                            {
-                                "name": "range to text",
-                                "value": 2
-                            }
-                        ],
-                        "maxDataPoints": 100,
-                        "nullPointMode": "connected",
-                        "nullText": null,
-                        "postfix": "",
-                        "postfixFontSize": "50%",
-                        "prefix": "",
-                        "prefixFontSize": "50%",
-                        "rangeMaps": [
-                            {
-                                "from": "null",
-                                "text": "N/A",
-                                "to": "null"
-                            }
-                        ],
-                        "span": 2,
-                        "sparkline": {
-                            "fillColor": "rgba(31, 118, 189, 0.18)",
-                            "full": false,
-                            "lineColor": "rgb(31, 120, 193)",
-                            "show": true
-                        },
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "dimensions": [],
-                                "error": "",
-                                "metric": "ceph.cluster.objects.total_count",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": "",
-                        "title": "Total Objects Stored",
-                        "type": "singlestat",
-                        "valueFontSize": "80%",
-                        "valueMaps": [
-                            {
-                                "op": "=",
-                                "text": "N/A",
-                                "value": "null"
-                            }
-                        ],
                         "valueName": "current"
-                    }
-                ],
-                "repeat": null,
-                "repeatIteration": null,
-                "repeatRowId": null,
-                "showTitle": true,
-                "title": "Cluster Overview",
-                "titleSize": "h6"
-            },
-            {
-                "collapse": false,
-                "height": "125",
-                "panels": [
+                    },
                     {
                         "cacheTimeout": null,
                         "colorBackground": false,
@@ -559,7 +390,7 @@
                                 "to": "null"
                             }
                         ],
-                        "span": 2,
+                        "span": 4,
                         "sparkline": {
                             "fillColor": "rgba(31, 118, 189, 0.18)",
                             "full": false,
@@ -571,171 +402,13 @@
                                 "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.osds.total_count",
-                                "period": "300",
+                                "metric": "ceph_osd_in_sum",
+                                "period": "3",
                                 "refId": "A"
                             }
                         ],
                         "thresholds": "1,2,3",
-                        "title": "Total Object Storage Daemons",
-                        "type": "singlestat",
-                        "valueFontSize": "80%",
-                        "valueMaps": [
-                            {
-                                "op": "=",
-                                "text": "None",
-                                "value": "0"
-                            }
-                        ],
-                        "valueName": "current"
-                    },
-                    {
-                        "cacheTimeout": null,
-                        "colorBackground": false,
-                        "colorValue": true,
-                        "colors": [
-                            "rgba(50, 172, 45, 0.97)",
-                            "rgba(237, 129, 40, 0.89)",
-                            "rgba(245, 54, 54, 0.9)"
-                        ],
-                        "datasource": "Monasca API",
-                        "decimals": 0,
-                        "editable": true,
-                        "error": false,
-                        "format": "none",
-                        "gauge": {
-                            "maxValue": 100,
-                            "minValue": 0,
-                            "show": false,
-                            "thresholdLabels": false,
-                            "thresholdMarkers": true
-                        },
-                        "id": 24,
-                        "interval": null,
-                        "links": [],
-                        "mappingType": 1,
-                        "mappingTypes": [
-                            {
-                                "name": "value to text",
-                                "value": 1
-                            },
-                            {
-                                "name": "range to text",
-                                "value": 2
-                            }
-                        ],
-                        "maxDataPoints": 100,
-                        "nullPointMode": "connected",
-                        "nullText": null,
-                        "postfix": "",
-                        "postfixFontSize": "50%",
-                        "prefix": "",
-                        "prefixFontSize": "50%",
-                        "rangeMaps": [
-                            {
-                                "from": "null",
-                                "text": "N/A",
-                                "to": "null"
-                            }
-                        ],
-                        "span": 2,
-                        "sparkline": {
-                            "fillColor": "rgba(31, 118, 189, 0.18)",
-                            "full": false,
-                            "lineColor": "rgb(31, 120, 193)",
-                            "show": true
-                        },
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "dimensions": [],
-                                "error": "",
-                                "metric": "ceph.cluster.osds.down_count",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": "1,3",
-                        "title": "Object Storage Daemons Down",
-                        "type": "singlestat",
-                        "valueFontSize": "80%",
-                        "valueMaps": [
-                            {
-                                "op": "=",
-                                "text": "None",
-                                "value": "0"
-                            }
-                        ],
-                        "valueName": "current"
-                    },
-                    {
-                        "cacheTimeout": null,
-                        "colorBackground": false,
-                        "colorValue": true,
-                        "colors": [
-                            "rgba(50, 172, 45, 0.97)",
-                            "rgba(237, 129, 40, 0.89)",
-                            "rgba(245, 54, 54, 0.9)"
-                        ],
-                        "datasource": "Monasca API",
-                        "decimals": 0,
-                        "editable": true,
-                        "error": false,
-                        "format": "none",
-                        "gauge": {
-                            "maxValue": 100,
-                            "minValue": 0,
-                            "show": false,
-                            "thresholdLabels": false,
-                            "thresholdMarkers": true
-                        },
-                        "id": 25,
-                        "interval": null,
-                        "links": [],
-                        "mappingType": 1,
-                        "mappingTypes": [
-                            {
-                                "name": "value to text",
-                                "value": 1
-                            },
-                            {
-                                "name": "range to text",
-                                "value": 2
-                            }
-                        ],
-                        "maxDataPoints": 100,
-                        "nullPointMode": "connected",
-                        "nullText": null,
-                        "postfix": "",
-                        "postfixFontSize": "50%",
-                        "prefix": "",
-                        "prefixFontSize": "50%",
-                        "rangeMaps": [
-                            {
-                                "from": "null",
-                                "text": "N/A",
-                                "to": "null"
-                            }
-                        ],
-                        "span": 2,
-                        "sparkline": {
-                            "fillColor": "rgba(31, 118, 189, 0.18)",
-                            "full": false,
-                            "lineColor": "rgb(31, 120, 193)",
-                            "show": true
-                        },
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "dimensions": [],
-                                "error": "",
-                                "metric": "ceph.cluster.osds.out_count",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": "1,3",
-                        "title": "Object Storage Daemons Out",
+                        "title": "Total Object Storage Daemons In",
                         "type": "singlestat",
                         "valueFontSize": "80%",
                         "valueMaps": [
@@ -752,7 +425,7 @@
                 "repeatIteration": null,
                 "repeatRowId": null,
                 "showTitle": true,
-                "title": "Object Storage Daemon Overview",
+                "title": "Cluster Overview",
                 "titleSize": "h6"
             },
             {
@@ -808,7 +481,7 @@
                                 "to": "null"
                             }
                         ],
-                        "span": 2,
+                        "span": 3,
                         "sparkline": {
                             "fillColor": "rgba(31, 118, 189, 0.18)",
                             "full": false,
@@ -820,92 +493,13 @@
                                 "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.pgs.total_count",
+                                "metric": "ceph_pg_active",
                                 "period": "300",
                                 "refId": "A"
                             }
                         ],
                         "thresholds": "",
                         "title": "Total Placement Groups",
-                        "type": "singlestat",
-                        "valueFontSize": "80%",
-                        "valueMaps": [
-                            {
-                                "op": "=",
-                                "text": "None",
-                                "value": "0"
-                            }
-                        ],
-                        "valueName": "current"
-                    },
-                    {
-                        "cacheTimeout": null,
-                        "colorBackground": false,
-                        "colorValue": false,
-                        "colors": [
-                            "rgba(50, 172, 45, 0.97)",
-                            "rgba(237, 129, 40, 0.89)",
-                            "rgba(245, 54, 54, 0.9)"
-                        ],
-                        "datasource": "Monasca API",
-                        "decimals": 0,
-                        "editable": true,
-                        "error": false,
-                        "format": "none",
-                        "gauge": {
-                            "maxValue": 100,
-                            "minValue": 0,
-                            "show": false,
-                            "thresholdLabels": false,
-                            "thresholdMarkers": true
-                        },
-                        "id": 30,
-                        "interval": null,
-                        "links": [],
-                        "mappingType": 1,
-                        "mappingTypes": [
-                            {
-                                "name": "value to text",
-                                "value": 1
-                            },
-                            {
-                                "name": "range to text",
-                                "value": 2
-                            }
-                        ],
-                        "maxDataPoints": 100,
-                        "nullPointMode": "connected",
-                        "nullText": null,
-                        "postfix": "",
-                        "postfixFontSize": "50%",
-                        "prefix": "",
-                        "prefixFontSize": "50%",
-                        "rangeMaps": [
-                            {
-                                "from": "null",
-                                "text": "N/A",
-                                "to": "null"
-                            }
-                        ],
-                        "span": 2,
-                        "sparkline": {
-                            "fillColor": "rgba(31, 118, 189, 0.18)",
-                            "full": false,
-                            "lineColor": "rgb(31, 120, 193)",
-                            "show": true
-                        },
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "dimensions": [],
-                                "error": "",
-                                "metric": "ceph.cluster.pgs.avg_per_osd",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": "",
-                        "title": "Avg Placement Groups per OSD",
                         "type": "singlestat",
                         "valueFontSize": "80%",
                         "valueMaps": [
@@ -966,7 +560,7 @@
                                 "to": "null"
                             }
                         ],
-                        "span": 2,
+                        "span": 3,
                         "sparkline": {
                             "fillColor": "rgba(31, 118, 189, 0.18)",
                             "full": false,
@@ -978,7 +572,7 @@
                                 "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.pgs.remapped_count",
+                                "metric": "ceph_pg_remapped",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -1057,7 +651,7 @@
                                 "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.pgs.deep_scrubbing_count",
+                                "metric": "ceph_pg_deep",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -1136,7 +730,7 @@
                                 "aggregator": "none",
                                 "dimensions": [],
                                 "error": "",
-                                "metric": "ceph.cluster.pgs.scrubbing_count",
+                                "metric": "ceph_pg_scrubbing",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -1164,8 +758,172 @@
             },
             {
                 "collapse": false,
-                "height": "300",
+                "height": 264,
                 "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 47,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sort": "avg",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@pool_id",
+                                "dimensions": [
+                                    {
+                                        "key": "pool_id",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "ceph_pool_wr_bytes_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Write rate per pool",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "Bps",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 51,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sort": "avg",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@pool_id",
+                                "dimensions": [
+                                    {
+                                        "key": "pool_id",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "ceph_pool_rd_bytes_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Read rate per pool",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "Bps",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
                     {
                         "aliasColors": {},
                         "bars": false,
@@ -1173,15 +931,20 @@
                         "editable": true,
                         "error": false,
                         "fill": 1,
-                        "id": 36,
+                        "id": 38,
                         "legend": {
-                            "avg": false,
+                            "alignAsTable": true,
+                            "avg": true,
                             "current": false,
-                            "max": false,
-                            "min": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
                             "show": true,
+                            "sideWidth": 300,
+                            "sort": "current",
+                            "sortDesc": true,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -1192,22 +955,125 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 3,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
-                                "alias": "@pool",
+                                "aggregator": "avg",
+                                "alias": "pool @pool_id",
                                 "dimensions": [
                                     {
-                                        "key": "pool",
+                                        "key": "pool_id",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "group": false,
-                                "metric": "ceph.pool.write_bytes_per_sec",
+                                "metric": "ceph_pool_objects",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Objects per pool",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "none",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": true,
+                "title": "Pool Stats",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 246,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 32,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sideWidth": 300,
+                            "sort": null,
+                            "sortDesc": null,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [
+                            {
+                                "type": "dashboard"
+                            }
+                        ],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
+                                "dimensions": [
+                                    {
+                                        "key": "ceph_daemon",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "ceph_osd_op_w_total_rate",
                                 "period": "300",
                                 "refId": "B"
                             }
@@ -1215,7 +1081,185 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Write Bandwidth by Pool",
+                        "title": "OSD write ops",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "none",
+                                "label": "Calls/s",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 46,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sideWidth": 300,
+                            "sort": "max",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [
+                            {
+                                "type": "dashboard"
+                            }
+                        ],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
+                                "dimensions": [
+                                    {
+                                        "key": "ceph_daemon",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "ceph_osd_op_r_total_rate",
+                                "period": "300",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "OSD read ops",
+                        "tooltip": {
+                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "none",
+                                "label": "Calls/s",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "editable": true,
+                        "error": false,
+                        "fill": 1,
+                        "id": 36,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sideWidth": 300,
+                            "sort": "max",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
+                                "dimensions": [
+                                    {
+                                        "key": "ceph_daemon",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "ceph_osd_op_w_in_bytes_total_rate",
+                                "period": "300",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "OSD write rate",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -1257,13 +1301,18 @@
                         "fill": 1,
                         "id": 31,
                         "legend": {
-                            "avg": false,
+                            "alignAsTable": true,
+                            "avg": true,
                             "current": false,
-                            "max": false,
-                            "min": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
                             "show": true,
+                            "sideWidth": 300,
+                            "sort": "max",
+                            "sortDesc": false,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -1274,22 +1323,22 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 3,
+                        "span": 6,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
-                                "alias": "@pool",
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
                                 "dimensions": [
                                     {
-                                        "key": "pool",
+                                        "key": "ceph_daemon",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "group": false,
-                                "metric": "ceph.pool.read_bytes_per_sec",
+                                "metric": "ceph_osd_op_r_out_bytes_total_rate",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -1297,7 +1346,7 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Read Bandwidth by Pool",
+                        "title": "OSD read rate",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -1334,522 +1383,25 @@
                         "aliasColors": {},
                         "bars": false,
                         "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 32,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 3,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "alias": "@pool",
-                                "dimensions": [
-                                    {
-                                        "key": "pool",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "ceph.pool.write_io_per_sec",
-                                "period": "300",
-                                "refId": "B"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Write IOPS by Pool",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "none",
-                                "label": "Calls/s",
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 35,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 3,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "alias": "@pool",
-                                "dimensions": [
-                                    {
-                                        "key": "pool",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "ceph.pool.read_io_per_sec",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Read IOPS by Pool",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "none",
-                                "label": "Calls/s",
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 38,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 3,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "@hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "ceph.pool.used_bytes",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Pool Size",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "decbytes",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 33,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 3,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "@pool",
-                                "dimensions": [
-                                    {
-                                        "key": "pool",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "ceph.pool.objects_count",
-                                "period": "300",
-                                "refId": "B"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Total no. of objects allocated by pool",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "none",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 37,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 3,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "@pool",
-                                "dimensions": [
-                                    {
-                                        "key": "pool",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "ceph.pool.dirty_objects_count",
-                                "period": "300",
-                                "refId": "B"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Total Number of Dirty Objects Allocated by Pool",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "none",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 34,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 3,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "@pool",
-                                "dimensions": [
-                                    {
-                                        "key": "pool",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "ceph.pool.quota_max_bytes",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Maximum Pool Size Quota",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "decbytes",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    }
-                ],
-                "repeat": null,
-                "repeatIteration": null,
-                "repeatRowId": null,
-                "showTitle": true,
-                "title": "Pool Stats",
-                "titleSize": "h6"
-            },
-            {
-                "collapse": false,
-                "height": "250px",
-                "panels": [
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
+                        "decimals": 0,
+                        "description": "Time for change to be applied to backing filesystem",
                         "editable": true,
                         "error": false,
                         "fill": 0,
                         "id": 39,
                         "legend": {
-                            "avg": false,
+                            "alignAsTable": true,
+                            "avg": true,
                             "current": false,
-                            "max": false,
-                            "min": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
                             "show": true,
+                            "sideWidth": 300,
+                            "sort": null,
+                            "sortDesc": null,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -1865,17 +1417,17 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
-                                "alias": "@osd",
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
                                 "dimensions": [
                                     {
-                                        "key": "osd",
+                                        "key": "ceph_daemon",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "group": false,
-                                "metric": "ceph.osd.perf.apply_latency_seconds",
+                                "metric": "ceph_osd_apply_latency_ms",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -1883,7 +1435,7 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "OSD Apply Latency",
+                        "title": "OSD apply latency",
                         "tooltip": {
                             "msResolution": false,
                             "shared": false,
@@ -1901,8 +1453,8 @@
                         },
                         "yaxes": [
                             {
-                                "format": "short",
-                                "label": "Apply Latency (s)",
+                                "format": "ms",
+                                "label": "Apply Latency (ms)",
                                 "logBase": 1,
                                 "max": null,
                                 "min": null,
@@ -1922,18 +1474,24 @@
                         "aliasColors": {},
                         "bars": false,
                         "datasource": "Monasca API",
+                        "description": "How long it takes for an operation to be applied to disk",
                         "editable": true,
                         "error": false,
                         "fill": 0,
                         "id": 40,
                         "legend": {
-                            "avg": false,
+                            "alignAsTable": true,
+                            "avg": true,
                             "current": false,
-                            "max": false,
-                            "min": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
                             "show": true,
+                            "sideWidth": 300,
+                            "sort": "max",
+                            "sortDesc": true,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -1949,17 +1507,17 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
-                                "alias": "@osd",
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
                                 "dimensions": [
                                     {
-                                        "key": "osd",
+                                        "key": "ceph_daemon",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
                                 "group": false,
-                                "metric": "ceph.osd.perf.commit_latency_seconds",
+                                "metric": "ceph_osd_commit_latency_ms",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -1967,7 +1525,7 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "OSD Commit Latency",
+                        "title": "OSD commit latency",
                         "tooltip": {
                             "msResolution": false,
                             "shared": false,
@@ -1985,8 +1543,92 @@
                         },
                         "yaxes": [
                             {
+                                "format": "ms",
+                                "label": "Commit Latency",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
                                 "format": "short",
-                                "label": "Commit Latency (s)",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "description": "",
+                        "fill": 1,
+                        "id": 48,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": false,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sideWidth": 300,
+                            "sort": "max",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@ceph_daemon",
+                                "dimensions": [
+                                    {
+                                        "key": "ceph_daemon",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "ceph_osd_op_wip",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "OSD replication operations currently being processed",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
                                 "logBase": 1,
                                 "max": null,
                                 "min": null,
@@ -2011,8 +1653,7 @@
                 "titleSize": "h6"
             }
         ],
-        "schemaVersion": 13,
-        "sharedCrosshair": false,
+        "schemaVersion": 14,
         "style": "dark",
         "tags": [
             "ceph"
@@ -2021,7 +1662,7 @@
             "list": []
         },
         "time": {
-            "from": "now-24h",
+            "from": "now-1h",
             "to": "now"
         },
         "timepicker": {
@@ -2051,19 +1692,19 @@
         },
         "timezone": "browser",
         "title": "Ceph",
-        "version": 14
+        "version": 1
     },
     "meta": {
         "canEdit": true,
         "canSave": true,
         "canStar": true,
-        "created": "2017-12-19T12:00:27Z",
-        "createdBy": "admin",
+        "created": "2020-03-20T19:38:10+02:00",
+        "createdBy": "stackhpc-doug",
         "expires": "0001-01-01T00:00:00Z",
         "slug": "ceph",
         "type": "db",
-        "updated": "2019-04-10T14:31:15+01:00",
-        "updatedBy": "stig",
-        "version": 14
+        "updated": "2020-03-25T22:30:50+02:00",
+        "updatedBy": "stackhpc-doug",
+        "version": 1
     }
 }
