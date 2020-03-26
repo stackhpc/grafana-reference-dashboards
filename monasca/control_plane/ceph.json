@@ -1655,9 +1655,7 @@
         ],
         "schemaVersion": 14,
         "style": "dark",
-        "tags": [
-            "ceph"
-        ],
+        "tags": [],
         "templating": {
             "list": []
         },
@@ -1692,7 +1690,7 @@
         },
         "timezone": "browser",
         "title": "Ceph",
-        "version": 1
+        "version": 2
     },
     "meta": {
         "canEdit": true,
@@ -1703,8 +1701,8 @@
         "expires": "0001-01-01T00:00:00Z",
         "slug": "ceph",
         "type": "db",
-        "updated": "2020-03-25T22:30:50+02:00",
+        "updated": "2020-03-26T19:32:15+02:00",
         "updatedBy": "stackhpc-doug",
-        "version": 1
+        "version": 2
     }
 }

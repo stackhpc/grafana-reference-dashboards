@@ -9,60 +9,59 @@
         "hideControls": false,
         "id": null,
         "links": [],
-        "refresh": false,
         "rows": [
             {
                 "collapse": false,
-                "height": 316,
+                "height": "250px",
                 "panels": [
                     {
                         "aliasColors": {},
                         "bars": false,
                         "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
                         "fill": 1,
-                        "id": 1,
+                        "id": 2,
                         "legend": {
                             "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
+                            "avg": true,
+                            "current": true,
+                            "max": true,
                             "min": false,
                             "rightSide": true,
                             "show": true,
+                            "sort": "avg",
+                            "sortDesc": true,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
                         "links": [],
-                        "nullPointMode": "connected",
+                        "nullPointMode": "null",
                         "percentage": false,
                         "pointradius": 5,
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 12,
+                        "span": 6,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
                                 "aggregator": "avg",
-                                "alias": "@exchange@@hostname",
+                                "alias": "@hostname",
                                 "dimensions": [
-                                    {
-                                        "key": "exchange",
-                                        "value": "$all"
-                                    },
                                     {
                                         "key": "hostname",
                                         "value": "$all"
+                                    },
+                                    {
+                                        "key": "type",
+                                        "value": "monasca"
                                     }
                                 ],
                                 "error": "",
                                 "group": false,
-                                "metric": "rabbitmq.exchange.messages.published_rate",
+                                "metric": "fluentd_output_status_emit_count_total_rate",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -70,9 +69,366 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Publish Rate",
+                        "title": "Logging rate to Monasca",
                         "tooltip": {
-                            "msResolution": false,
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "hertz",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 3,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": true,
+                            "max": true,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "type",
+                                        "value": "monasca"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "fluentd_output_status_buffer_available_space_ratio",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Available buffer space for Monasca output",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "percent",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 4,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": true,
+                            "max": true,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "sort": "avg",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "type",
+                                        "value": "monasca"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "fluentd_output_status_buffer_total_bytes",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Monasca output buffer total size",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 5,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": true,
+                            "max": true,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "type",
+                                        "value": "file"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "fluentd_output_status_buffer_total_bytes",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "File output buffer total size",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 6,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": true,
+                            "current": true,
+                            "hideEmpty": true,
+                            "hideZero": true,
+                            "max": true,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "sort": "avg",
+                            "sortDesc": true,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname @type @plugin_id",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "type",
+                                        "value": "monasca"
+                                    },
+                                    {
+                                        "key": "plugin_id",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "fluentd_output_status_retry_count_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Output plugin retry rate",
+                        "tooltip": {
                             "shared": true,
                             "sort": 0,
                             "value_type": "individual"
@@ -107,246 +463,53 @@
                         "aliasColors": {},
                         "bars": false,
                         "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
                         "fill": 1,
-                        "id": 2,
+                        "id": 7,
                         "legend": {
                             "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 12,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "@exchange@@hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "exchange",
-                                        "value": "$all"
-                                    },
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.exchange.messages.received_rate",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Receive Rate",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "hertz",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {
-                            "redeliver_rate": "#BF1B00"
-                        },
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 3,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 12,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "deliver_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.deliver_rate",
-                                "period": "300",
-                                "refId": "A"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "alias": "publish_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.publish_rate",
-                                "period": "300",
-                                "refId": "B"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "alias": "redeliver_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.redeliver_rate",
-                                "period": "300",
-                                "refId": "C"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Queue Message Rates (All Queues)",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "hertz",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": "0",
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": null,
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 24,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
+                            "avg": true,
+                            "current": true,
+                            "hideEmpty": true,
                             "hideZero": true,
-                            "max": false,
+                            "max": true,
                             "min": false,
                             "rightSide": true,
                             "show": true,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
                         "links": [],
-                        "nullPointMode": "connected",
+                        "nullPointMode": "null",
                         "percentage": false,
                         "pointradius": 5,
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 12,
+                        "span": 6,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
                                 "aggregator": "none",
-                                "alias": "@queue queue",
+                                "alias": "@hostname @type @plugin_id",
                                 "dimensions": [
                                     {
-                                        "key": "queue",
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "type",
+                                        "value": "monasca"
+                                    },
+                                    {
+                                        "key": "plugin_id",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "rabbitmq.queue.messages.unacknowledged",
+                                "metric": "fluentd_output_status_retry_wait",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -354,9 +517,8 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Unacknowledged messages in queue",
+                        "title": "Output plugin time to retry",
                         "tooltip": {
-                            "msResolution": false,
                             "shared": true,
                             "sort": 0,
                             "value_type": "individual"
@@ -370,8 +532,8 @@
                         },
                         "yaxes": [
                             {
-                                "format": "short",
-                                "label": null,
+                                "format": "s",
+                                "label": "Retry wait",
                                 "logBase": 1,
                                 "max": null,
                                 "min": null,
@@ -392,7 +554,7 @@
                 "repeatIteration": null,
                 "repeatRowId": null,
                 "showTitle": false,
-                "title": "RabbitMQ Metrics",
+                "title": "Dashboard Row",
                 "titleSize": "h6"
             }
         ],
@@ -432,20 +594,20 @@
             ]
         },
         "timezone": "browser",
-        "title": "RabbitMQ",
-        "version": 5
+        "title": "Fluentd",
+        "version": 3
     },
     "meta": {
         "canEdit": true,
         "canSave": true,
         "canStar": true,
-        "created": "2020-03-17T18:54:29+02:00",
+        "created": "2020-03-20T19:28:46+02:00",
         "createdBy": "stackhpc-doug",
         "expires": "0001-01-01T00:00:00Z",
-        "slug": "rabbitmq",
+        "slug": "fluentd",
         "type": "db",
-        "updated": "2020-03-25T22:32:11+02:00",
+        "updated": "2020-03-25T22:31:06+02:00",
         "updatedBy": "stackhpc-doug",
-        "version": 5
+        "version": 3
     }
 }
