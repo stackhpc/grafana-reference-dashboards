@@ -803,7 +803,7 @@
                                 ],
                                 "error": "",
                                 "metric": "ceph_pool_wr_bytes_total_rate",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -885,7 +885,7 @@
                                 ],
                                 "error": "",
                                 "metric": "ceph_pool_rd_bytes_total_rate",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -971,7 +971,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_pool_objects",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -1074,7 +1074,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_osd_op_w_total_rate",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "B"
                             }
                         ],
@@ -1165,7 +1165,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_osd_op_r_total_rate",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "B"
                             }
                         ],
@@ -1252,7 +1252,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_osd_op_w_in_bytes_total_rate",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "B"
                             }
                         ],
@@ -1339,7 +1339,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_osd_op_r_out_bytes_total_rate",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -1428,7 +1428,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_osd_apply_latency_ms",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -1518,7 +1518,7 @@
                                 "error": "",
                                 "group": false,
                                 "metric": "ceph_osd_commit_latency_ms",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -1605,7 +1605,7 @@
                                 ],
                                 "error": "",
                                 "metric": "ceph_osd_op_wip",
-                                "period": "300",
+                                "period": "$avgperiod",
                                 "refId": "A"
                             }
                         ],
@@ -1657,7 +1657,60 @@
         "style": "dark",
         "tags": [],
         "templating": {
-            "list": []
+            "list": [
+                {
+                    "auto": true,
+                    "auto_count": 30,
+                    "auto_min": "10s",
+                    "current": {
+                        "text": "auto",
+                        "value": "$__auto_interval"
+                    },
+                    "hide": 0,
+                    "label": "Averaging Period",
+                    "name": "avgperiod",
+                    "options": [
+                        {
+                            "selected": true,
+                            "text": "auto",
+                            "value": "$__auto_interval"
+                        },
+                        {
+                            "selected": false,
+                            "text": "1",
+                            "value": "1"
+                        },
+                        {
+                            "selected": false,
+                            "text": "10",
+                            "value": "10"
+                        },
+                        {
+                            "selected": false,
+                            "text": "60",
+                            "value": "60"
+                        },
+                        {
+                            "selected": false,
+                            "text": "300",
+                            "value": "300"
+                        },
+                        {
+                            "selected": false,
+                            "text": "1800",
+                            "value": "1800"
+                        },
+                        {
+                            "selected": false,
+                            "text": "3600",
+                            "value": "3600"
+                        }
+                    ],
+                    "query": "1,10,60,300,1800,3600",
+                    "refresh": 2,
+                    "type": "interval"
+                }
+            ]
         },
         "time": {
             "from": "now-1h",
@@ -1690,7 +1743,7 @@
         },
         "timezone": "browser",
         "title": "Ceph",
-        "version": 2
+        "version": 3
     },
     "meta": {
         "canEdit": true,
@@ -1701,8 +1754,8 @@
         "expires": "0001-01-01T00:00:00Z",
         "slug": "ceph",
         "type": "db",
-        "updated": "2020-03-26T19:32:15+02:00",
+        "updated": "2020-03-26T19:52:03+02:00",
         "updatedBy": "stackhpc-doug",
-        "version": 2
+        "version": 3
     }
 }
