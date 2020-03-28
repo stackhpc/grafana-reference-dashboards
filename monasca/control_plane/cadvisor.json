@@ -572,7 +572,6 @@
                 {
                     "allValue": null,
                     "current": {
-                        "tags": [],
                         "text": "All",
                         "value": [
                             "$__all"
@@ -584,140 +583,9 @@
                     "label": "hostname",
                     "multi": true,
                     "name": "hostname",
-                    "options": [
-                        {
-                            "selected": true,
-                            "text": "All",
-                            "value": "$__all"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-0",
-                            "value": "ceph-0"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-1",
-                            "value": "ceph-1"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-2",
-                            "value": "ceph-2"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-3",
-                            "value": "ceph-3"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-4",
-                            "value": "ceph-4"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-5",
-                            "value": "ceph-5"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-6",
-                            "value": "ceph-6"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-7",
-                            "value": "ceph-7"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-8",
-                            "value": "ceph-8"
-                        },
-                        {
-                            "selected": false,
-                            "text": "ceph-9",
-                            "value": "ceph-9"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-0",
-                            "value": "compute-0"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-1",
-                            "value": "compute-1"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-2",
-                            "value": "compute-2"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-3",
-                            "value": "compute-3"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-4",
-                            "value": "compute-4"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-5",
-                            "value": "compute-5"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-6",
-                            "value": "compute-6"
-                        },
-                        {
-                            "selected": false,
-                            "text": "compute-7",
-                            "value": "compute-7"
-                        },
-                        {
-                            "selected": false,
-                            "text": "controller-0",
-                            "value": "controller-0"
-                        },
-                        {
-                            "selected": false,
-                            "text": "controller-1",
-                            "value": "controller-1"
-                        },
-                        {
-                            "selected": false,
-                            "text": "controller-2",
-                            "value": "controller-2"
-                        },
-                        {
-                            "selected": false,
-                            "text": "monitoring-0",
-                            "value": "monitoring-0"
-                        },
-                        {
-                            "selected": false,
-                            "text": "rbd:volumes@rbd-hdd",
-                            "value": "rbd:volumes@rbd-hdd"
-                        },
-                        {
-                            "selected": false,
-                            "text": "rbd:volumes@rbd-nvme",
-                            "value": "rbd:volumes@rbd-nvme"
-                        },
-                        {
-                            "selected": false,
-                            "text": "rbd:volumes@rbd-ssd",
-                            "value": "rbd:volumes@rbd-ssd"
-                        }
-                    ],
+                    "options": [],
                     "query": "hostname",
-                    "refresh": 0,
+                    "refresh": 1,
                     "regex": "",
                     "sort": 0,
                     "tagValuesQuery": "",
@@ -759,7 +627,7 @@
         },
         "timezone": "browser",
         "title": "cAdvisor",
-        "version": 8
+        "version": 9
     },
     "meta": {
         "canEdit": true,
@@ -770,8 +638,8 @@
         "expires": "0001-01-01T00:00:00Z",
         "slug": "cadvisor",
         "type": "db",
-        "updated": "2020-03-26T19:29:07+02:00",
+        "updated": "2020-03-28T18:31:59+02:00",
         "updatedBy": "stackhpc-doug",
-        "version": 8
+        "version": 9
     }
 }
