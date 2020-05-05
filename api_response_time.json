@@ -1,0 +1,301 @@
+{
+    "dashboard": {
+        "annotations": {
+            "list": []
+        },
+        "editable": true,
+        "gnetId": null,
+        "graphTooltip": 0,
+        "hideControls": false,
+        "id": null,
+        "links": [],
+        "rows": [
+            {
+                "collapse": false,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {
+                            "placement_api GET  200": "#0A50A1",
+                            "placement_api PUT  204": "#65C5DB"
+                        },
+                        "bars": false,
+                        "bucketMode": "size",
+                        "bucketSize": "10",
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "grid": {
+                            "threshold1": null,
+                            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+                            "threshold2": null,
+                            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        },
+                        "height": "600",
+                        "id": 2,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": true,
+                            "max": true,
+                            "min": true,
+                            "rightSide": true,
+                            "show": true,
+                            "sort": null,
+                            "sortDesc": null,
+                            "total": false,
+                            "values": true
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "maxValue": "1000",
+                        "minSpan": null,
+                        "minValue": "",
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": null,
+                        "seriesOverrides": [],
+                        "span": 12,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@frontend_name @http_req  @status_code",
+                                "dimensions": [
+                                    {
+                                        "key": "frontend_name",
+                                        "value": "$frontend_name"
+                                    },
+                                    {
+                                        "key": "status_code",
+                                        "value": "$status_code"
+                                    },
+                                    {
+                                        "key": "http_req",
+                                        "value": "$http_req"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "haproxy_logs_time_to_request",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "API response time (ms)",
+                        "tooltip": {
+                            "msResolution": false,
+                            "ordering": "alphabetical",
+                            "shared": true,
+                            "value_type": "cumulative"
+                        },
+                        "type": "mtanda-histogram-panel",
+                        "xaxis": {
+                            "show": true
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            }
+        ],
+        "schemaVersion": 14,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+            "list": [
+                {
+                    "allValue": null,
+                    "current": {
+                        "text": "200 + 201 + 202 + 204 + 300 + 302 + 304 + 400 + 401 + 403 + 404 + 409 + 500 + 503",
+                        "value": [
+                            "200",
+                            "201",
+                            "202",
+                            "204",
+                            "300",
+                            "302",
+                            "304",
+                            "400",
+                            "401",
+                            "403",
+                            "404",
+                            "409",
+                            "500",
+                            "503"
+                        ]
+                    },
+                    "datasource": "Monasca API",
+                    "hide": 0,
+                    "includeAll": true,
+                    "label": "Status code",
+                    "multi": true,
+                    "name": "status_code",
+                    "options": [],
+                    "query": "status_code",
+                    "refresh": 1,
+                    "regex": "",
+                    "sort": 0,
+                    "tagValuesQuery": null,
+                    "tags": [],
+                    "tagsQuery": null,
+                    "type": "query",
+                    "useTags": false
+                },
+                {
+                    "allValue": null,
+                    "current": {
+                        "text": "DELETE + GET + POST + PUT",
+                        "value": [
+                            "DELETE",
+                            "GET",
+                            "POST",
+                            "PUT"
+                        ]
+                    },
+                    "datasource": "Monasca API",
+                    "hide": 0,
+                    "includeAll": true,
+                    "label": "Request  type",
+                    "multi": true,
+                    "name": "http_req",
+                    "options": [],
+                    "query": "http_req",
+                    "refresh": 1,
+                    "regex": "",
+                    "sort": 0,
+                    "tagValuesQuery": null,
+                    "tags": [],
+                    "tagsQuery": null,
+                    "type": "query",
+                    "useTags": false
+                },
+                {
+                    "allValue": null,
+                    "current": {
+                        "text": "glance_api + glance_api_external + horizon_external + influxdb_http + keystone_admin + keystone_external + keystone_internal + kibana_external + monasca_api + monasca_grafana_server + monasca_grafana_server_external + monasca_log_api + neutron_server + neutron_server_external + nova_api + nova_api_external + nova_metadata + placement_api",
+                        "value": [
+                            "glance_api",
+                            "glance_api_external",
+                            "horizon_external",
+                            "influxdb_http",
+                            "keystone_admin",
+                            "keystone_external",
+                            "keystone_internal",
+                            "kibana_external",
+                            "monasca_api",
+                            "monasca_grafana_server",
+                            "monasca_grafana_server_external",
+                            "monasca_log_api",
+                            "neutron_server",
+                            "neutron_server_external",
+                            "nova_api",
+                            "nova_api_external",
+                            "nova_metadata",
+                            "placement_api"
+                        ]
+                    },
+                    "datasource": "Monasca API",
+                    "hide": 0,
+                    "includeAll": true,
+                    "label": "Frontend",
+                    "multi": true,
+                    "name": "frontend_name",
+                    "options": [],
+                    "query": "frontend_name",
+                    "refresh": 1,
+                    "regex": "",
+                    "sort": 0,
+                    "tagValuesQuery": null,
+                    "tags": [],
+                    "tagsQuery": null,
+                    "type": "query",
+                    "useTags": false
+                }
+            ]
+        },
+        "time": {
+            "from": "now-30m",
+            "to": "now"
+        },
+        "timepicker": {
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "time_options": [
+                "5m",
+                "15m",
+                "1h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ]
+        },
+        "timezone": "browser",
+        "title": "API response time",
+        "version": 4
+    },
+    "meta": {
+        "canEdit": true,
+        "canSave": true,
+        "canStar": true,
+        "created": "2020-03-28T17:26:56Z",
+        "createdBy": "dszumski",
+        "expires": "0001-01-01T00:00:00Z",
+        "slug": "api-response-time",
+        "type": "db",
+        "updated": "2020-05-02T16:56:38Z",
+        "updatedBy": "dszumski",
+        "version": 4
+    }
+}
