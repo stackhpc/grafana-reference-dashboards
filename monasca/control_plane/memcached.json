@@ -6,17 +6,16 @@
         "canStar": true,
         "slug": "memcached",
         "expires": "0001-01-01T00:00:00Z",
-        "created": "2020-07-22T10:13:14+01:00",
-        "updated": "2020-07-22T10:37:27+01:00",
-        "updatedBy": "admin",
-        "createdBy": "admin",
-        "version": 8
+        "created": "2020-07-23T15:41:00+02:00",
+        "updated": "2020-07-23T15:52:01+02:00",
+        "updatedBy": "stig",
+        "createdBy": "stig",
+        "version": 1
     },
     "dashboard": {
         "annotations": {
             "list": []
         },
-        "editMode": false,
         "editable": true,
         "gnetId": null,
         "graphTooltip": 0,
@@ -238,13 +237,13 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 12,
+                        "span": 6,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
                                 "aggregator": "avg",
-                                "alias": "@hostname / @command : @status",
+                                "alias": "@hostname / @command",
                                 "dimensions": [
                                     {
                                         "key": "command",
@@ -252,7 +251,7 @@
                                     },
                                     {
                                         "key": "status",
-                                        "value": "$all"
+                                        "value": "hit"
                                     },
                                     {
                                         "key": "hostname",
@@ -268,7 +267,95 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Request statistics",
+                        "title": "Request statistics - hits",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 4,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname / @command",
+                                "dimensions": [
+                                    {
+                                        "key": "command",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "status",
+                                        "value": "miss"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "memcached_commands_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Request statistics - misses",
                         "tooltip": {
                             "shared": true,
                             "sort": 0,
@@ -346,6 +433,6 @@
         },
         "timezone": "browser",
         "title": "Memcached",
-        "version": 8
+        "version": 1
     }
 }
