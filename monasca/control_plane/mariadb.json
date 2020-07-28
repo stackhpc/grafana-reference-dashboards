@@ -7,10 +7,10 @@
         "slug": "mariadb",
         "expires": "0001-01-01T00:00:00Z",
         "created": "2020-07-23T23:03:25+02:00",
-        "updated": "2020-07-28T18:02:45+02:00",
+        "updated": "2020-07-28T19:08:52+02:00",
         "updatedBy": "stig",
         "createdBy": "stig",
-        "version": 21
+        "version": 24
     },
     "dashboard": {
         "annotations": {
@@ -28,85 +28,6 @@
                 "collapse": false,
                 "height": 250,
                 "panels": [
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": null,
-                        "fill": 1,
-                        "id": 18,
-                        "legend": {
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "null",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 6,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "alias": "@hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "backend",
-                                        "value": "mariadb"
-                                    }
-                                ],
-                                "error": "",
-                                "group": true,
-                                "metric": "haproxy_backend_http_response_time_average_seconds",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "API Request Latency",
-                        "tooltip": {
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
                     {
                         "aliasColors": {},
                         "bars": false,
@@ -192,7 +113,7 @@
                 "repeatIteration": null,
                 "repeatRowId": null,
                 "showTitle": true,
-                "title": "API",
+                "title": "Volume",
                 "titleSize": "h1"
             },
             {
@@ -943,7 +864,7 @@
                     }
                 ],
                 "repeat": null,
-                "repeatIteration": 1595951772906,
+                "repeatIteration": 1595954389675,
                 "repeatRowId": 2,
                 "showTitle": true,
                 "title": "Volume - $controller",
@@ -1320,7 +1241,7 @@
                     }
                 ],
                 "repeat": null,
-                "repeatIteration": 1595951772906,
+                "repeatIteration": 1595954389675,
                 "repeatRowId": 2,
                 "showTitle": true,
                 "title": "Volume - $controller",
@@ -1483,6 +1404,85 @@
                         "bars": false,
                         "datasource": null,
                         "fill": 1,
+                        "id": 30,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "haproxy_backend_current_queue",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "TCP Connection Queue",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
                         "id": 9,
                         "legend": {
                             "avg": false,
@@ -1576,7 +1576,7 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 6,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
@@ -1650,7 +1650,7 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 6,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
@@ -1840,7 +1840,7 @@
                         "points": false,
                         "renderer": "flot",
                         "repeat": null,
-                        "repeatIteration": 1595951772906,
+                        "repeatIteration": 1595954389675,
                         "repeatPanelId": 1,
                         "scopedVars": {
                             "controller": {
@@ -1945,7 +1945,7 @@
                         "points": false,
                         "renderer": "flot",
                         "repeat": null,
-                        "repeatIteration": 1595951772906,
+                        "repeatIteration": 1595954389675,
                         "repeatPanelId": 1,
                         "scopedVars": {
                             "controller": {
@@ -2040,7 +2040,7 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": null,
+                        "datasource": "Monasca API",
                         "fill": 1,
                         "id": 20,
                         "legend": {
@@ -2063,10 +2063,11 @@
                         "seriesOverrides": [],
                         "span": 4,
                         "stack": false,
-                        "steppedLine": false,
+                        "steppedLine": true,
                         "targets": [
                             {
                                 "aggregator": "none",
+                                "alias": "@hostname",
                                 "dimensions": [
                                     {
                                         "key": "backend",
@@ -2074,7 +2075,8 @@
                                     }
                                 ],
                                 "error": "",
-                                "metric": "haproxy_backend_http_responses_total_rate",
+                                "group": true,
+                                "metric": "haproxy_backend_response_errors_total_rate",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -2101,7 +2103,86 @@
                                 "label": null,
                                 "logBase": 1,
                                 "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
                                 "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 29,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "haproxy_backend_retry_warnings_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "API Retry Warnings",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
                                 "show": true
                             },
                             {
@@ -2275,6 +2356,6 @@
         },
         "timezone": "browser",
         "title": "MariaDB",
-        "version": 21
+        "version": 24
     }
 }
