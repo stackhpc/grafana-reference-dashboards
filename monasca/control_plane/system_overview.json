@@ -321,7 +321,7 @@
                                     }
                                 ],
                                 "error": "",
-                                "metric": "mem.free_mb",
+                                "metric": "mem.usable_mb",
                                 "period": "300",
                                 "refId": "A"
                             }
