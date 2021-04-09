@@ -5,6 +5,7 @@
         },
         "editable": true,
         "gnetId": null,
+        "graphTooltip": 0,
         "hideControls": false,
         "id": null,
         "links": [],
@@ -47,7 +48,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
@@ -131,7 +132,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
@@ -215,7 +216,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
@@ -306,12 +307,12 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 6,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
@@ -320,8 +321,8 @@
                                     }
                                 ],
                                 "error": "",
-                                "metric": "mem.free_mb",
-                                "period": "30",
+                                "metric": "mem.usable_mb",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
@@ -389,12 +390,12 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 6,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname",
                                 "dimensions": [
                                     {
@@ -404,7 +405,7 @@
                                 ],
                                 "error": "",
                                 "metric": "mem.swap_free_mb",
-                                "period": "30",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
@@ -443,19 +444,7 @@
                                 "show": true
                             }
                         ]
-                    }
-                ],
-                "repeat": null,
-                "repeatIteration": null,
-                "repeatRowId": null,
-                "showTitle": false,
-                "title": "Dashboard Row",
-                "titleSize": "h6"
-            },
-            {
-                "collapse": false,
-                "height": 250,
-                "panels": [
+                    },
                     {
                         "aliasColors": {},
                         "bars": false,
@@ -466,14 +455,15 @@
                         "id": 11,
                         "legend": {
                             "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
+                            "avg": true,
+                            "current": true,
+                            "max": true,
+                            "min": true,
                             "rightSide": true,
                             "show": true,
+                            "sideWidth": 400,
                             "total": false,
-                            "values": false
+                            "values": true
                         },
                         "lines": true,
                         "linewidth": 1,
@@ -484,25 +474,25 @@
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 6,
+                        "span": 4,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
-                                "alias": "@hostname @device",
+                                "aggregator": "avg",
+                                "alias": "@hostname @chip",
                                 "dimensions": [
                                     {
                                         "key": "hostname",
                                         "value": "$hostname"
                                     },
                                     {
-                                        "key": "device",
+                                        "key": "chip",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "ibnet.port_rcv_data",
+                                "metric": "node_hwmon_temp_celsius",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -510,7 +500,7 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Inbound Infiniband Network Traffic",
+                        "title": "Temperature",
                         "tooltip": {
                             "msResolution": false,
                             "shared": true,
@@ -526,95 +516,8 @@
                         },
                         "yaxes": [
                             {
-                                "format": "Bps",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 12,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 6,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "alias": "@hostname @device",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$hostname"
-                                    },
-                                    {
-                                        "key": "device",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "ibnet.port_xmit_data",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Outbound Infiniband Network Traffic",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "Bps",
-                                "label": null,
+                                "format": "celsius",
+                                "label": "",
                                 "logBase": 1,
                                 "max": null,
                                 "min": null,
@@ -675,7 +578,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname @device",
                                 "dimensions": [
                                     {
@@ -689,15 +592,8 @@
                                 ],
                                 "error": "",
                                 "metric": "net.in_bytes_sec",
-                                "period": "30",
-                                "refId": "A"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "dimensions": [],
-                                "error": "No metric specified",
                                 "period": "300",
-                                "refId": "B"
+                                "refId": "A"
                             }
                         ],
                         "thresholds": [],
@@ -769,7 +665,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname @device",
                                 "dimensions": [
                                     {
@@ -783,7 +679,7 @@
                                 ],
                                 "error": "",
                                 "metric": "net.out_bytes_sec",
-                                "period": "30",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
@@ -868,7 +764,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname @device",
                                 "dimensions": [
                                     {
@@ -882,7 +778,7 @@
                                 ],
                                 "error": "",
                                 "metric": "disk.space_used_perc",
-                                "period": "30",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
@@ -955,7 +851,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname @device",
                                 "dimensions": [
                                     {
@@ -969,7 +865,7 @@
                                 ],
                                 "error": "",
                                 "metric": "io.write_kbytes_sec",
-                                "period": "30",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
@@ -1042,7 +938,7 @@
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
+                                "aggregator": "avg",
                                 "alias": "@hostname @device",
                                 "dimensions": [
                                     {
@@ -1056,7 +952,7 @@
                                 ],
                                 "error": "",
                                 "metric": "io.read_kbytes_sec",
-                                "period": "30",
+                                "period": "300",
                                 "refId": "A"
                             }
                         ],
@@ -1105,8 +1001,7 @@
                 "titleSize": "h6"
             }
         ],
-        "schemaVersion": 13,
-        "sharedCrosshair": false,
+        "schemaVersion": 14,
         "style": "dark",
         "tags": [],
         "templating": {
@@ -1129,13 +1024,15 @@
                     "regex": "",
                     "sort": 0,
                     "tagValuesQuery": null,
+                    "tags": [],
                     "tagsQuery": null,
-                    "type": "query"
+                    "type": "query",
+                    "useTags": false
                 }
             ]
         },
         "time": {
-            "from": "now-3h",
+            "from": "now-1h",
             "to": "now"
         },
         "timepicker": {
@@ -1165,19 +1062,19 @@
         },
         "timezone": "browser",
         "title": "System Overview",
-        "version": 3
+        "version": 7
     },
     "meta": {
         "canEdit": true,
         "canSave": true,
         "canStar": true,
-        "created": "2017-12-19T15:39:42Z",
-        "createdBy": "dougkcl@Kcl",
+        "created": "2020-03-17T18:54:30+02:00",
+        "createdBy": "stackhpc-doug",
         "expires": "0001-01-01T00:00:00Z",
         "slug": "system-overview",
         "type": "db",
-        "updated": "2017-12-19T15:41:59Z",
-        "updatedBy": "dougkcl@Kcl",
-        "version": 3
+        "updated": "2020-03-25T22:32:38+02:00",
+        "updatedBy": "stackhpc-doug",
+        "version": 7
     }
 }

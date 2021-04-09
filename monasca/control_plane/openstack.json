@@ -9,27 +9,22 @@
         "hideControls": false,
         "id": null,
         "links": [],
-        "refresh": false,
         "rows": [
             {
                 "collapse": false,
-                "height": 316,
+                "height": 250,
                 "panels": [
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
+                        "datasource": null,
                         "fill": 1,
-                        "id": 1,
+                        "id": 2,
                         "legend": {
-                            "alignAsTable": true,
                             "avg": false,
                             "current": false,
                             "max": false,
                             "min": false,
-                            "rightSide": true,
                             "show": true,
                             "total": false,
                             "values": false
@@ -37,32 +32,27 @@
                         "lines": true,
                         "linewidth": 1,
                         "links": [],
-                        "nullPointMode": "connected",
+                        "nullPointMode": "null",
                         "percentage": false,
                         "pointradius": 5,
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 12,
+                        "span": 3,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
                                 "aggregator": "avg",
-                                "alias": "@exchange@@hostname",
+                                "alias": "@hostname",
                                 "dimensions": [
-                                    {
-                                        "key": "exchange",
-                                        "value": "$all"
-                                    },
                                     {
                                         "key": "hostname",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "group": false,
-                                "metric": "rabbitmq.exchange.messages.published_rate",
+                                "metric": "openstack_nova_running_vms",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -70,9 +60,8 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Publish Rate",
+                        "title": "Hypervisor running VMs",
                         "tooltip": {
-                            "msResolution": false,
                             "shared": true,
                             "sort": 0,
                             "value_type": "individual"
@@ -86,7 +75,85 @@
                         },
                         "yaxes": [
                             {
-                                "format": "hertz",
+                                "format": "short",
+                                "label": "Servers",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 7,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 3,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "openstack_nova_vcpus_used_perc",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Hypervisor vCPUs used",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "percentunit",
                                 "label": "",
                                 "logBase": 1,
                                 "max": null,
@@ -106,18 +173,14 @@
                     {
                         "aliasColors": {},
                         "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
+                        "datasource": null,
                         "fill": 1,
-                        "id": 2,
+                        "id": 6,
                         "legend": {
-                            "alignAsTable": true,
                             "avg": false,
                             "current": false,
                             "max": false,
                             "min": false,
-                            "rightSide": true,
                             "show": true,
                             "total": false,
                             "values": false
@@ -125,31 +188,27 @@
                         "lines": true,
                         "linewidth": 1,
                         "links": [],
-                        "nullPointMode": "connected",
+                        "nullPointMode": "null",
                         "percentage": false,
                         "pointradius": 5,
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 12,
+                        "span": 3,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
                                 "aggregator": "avg",
-                                "alias": "@exchange@@hostname",
+                                "alias": "@hostname",
                                 "dimensions": [
-                                    {
-                                        "key": "exchange",
-                                        "value": "$all"
-                                    },
                                     {
                                         "key": "hostname",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "rabbitmq.exchange.messages.received_rate",
+                                "metric": "openstack_nova_memory_used_perc",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -157,9 +216,8 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Receive Rate",
+                        "title": "Hypervisor memory used",
                         "tooltip": {
-                            "msResolution": false,
                             "shared": true,
                             "sort": 0,
                             "value_type": "individual"
@@ -173,124 +231,11 @@
                         },
                         "yaxes": [
                             {
-                                "format": "hertz",
-                                "label": null,
+                                "format": "percentunit",
+                                "label": "",
                                 "logBase": 1,
                                 "max": null,
                                 "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {
-                            "redeliver_rate": "#BF1B00"
-                        },
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 3,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 12,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "deliver_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.deliver_rate",
-                                "period": "300",
-                                "refId": "A"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "alias": "publish_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.publish_rate",
-                                "period": "300",
-                                "refId": "B"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "alias": "redeliver_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.redeliver_rate",
-                                "period": "300",
-                                "refId": "C"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Queue Message Rates (All Queues)",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "hertz",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": "0",
                                 "show": true
                             },
                             {
@@ -307,18 +252,13 @@
                         "aliasColors": {},
                         "bars": false,
                         "datasource": null,
-                        "editable": true,
-                        "error": false,
                         "fill": 1,
-                        "id": 24,
+                        "id": 5,
                         "legend": {
-                            "alignAsTable": true,
                             "avg": false,
                             "current": false,
-                            "hideZero": true,
                             "max": false,
                             "min": false,
-                            "rightSide": true,
                             "show": true,
                             "total": false,
                             "values": false
@@ -326,27 +266,27 @@
                         "lines": true,
                         "linewidth": 1,
                         "links": [],
-                        "nullPointMode": "connected",
+                        "nullPointMode": "null",
                         "percentage": false,
                         "pointradius": 5,
                         "points": false,
                         "renderer": "flot",
                         "seriesOverrides": [],
-                        "span": 12,
+                        "span": 3,
                         "stack": false,
                         "steppedLine": false,
                         "targets": [
                             {
-                                "aggregator": "none",
-                                "alias": "@queue queue",
+                                "aggregator": "avg",
+                                "alias": "@hostname",
                                 "dimensions": [
                                     {
-                                        "key": "queue",
+                                        "key": "hostname",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "rabbitmq.queue.messages.unacknowledged",
+                                "metric": "openstack_nova_local_storage_used_perc",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -354,9 +294,8 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Unacknowledged messages in queue",
+                        "title": "Hypervisor local storage used",
                         "tooltip": {
-                            "msResolution": false,
                             "shared": true,
                             "sort": 0,
                             "value_type": "individual"
@@ -370,8 +309,8 @@
                         },
                         "yaxes": [
                             {
-                                "format": "short",
-                                "label": null,
+                                "format": "percentunit",
+                                "label": "",
                                 "logBase": 1,
                                 "max": null,
                                 "min": null,
@@ -392,7 +331,165 @@
                 "repeatIteration": null,
                 "repeatRowId": null,
                 "showTitle": false,
-                "title": "RabbitMQ Metrics",
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 3,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "",
+                                "dimensions": [],
+                                "error": "",
+                                "metric": "openstack_neutron_networks",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Neutron networks",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 4,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "",
+                                "dimensions": [],
+                                "error": "",
+                                "metric": "openstack_neutron_routers",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Neutron routers",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
                 "titleSize": "h6"
             }
         ],
@@ -432,19 +529,19 @@
             ]
         },
         "timezone": "browser",
-        "title": "RabbitMQ",
+        "title": "OpenStack",
         "version": 5
     },
     "meta": {
         "canEdit": true,
         "canSave": true,
         "canStar": true,
-        "created": "2020-03-17T18:54:29+02:00",
+        "created": "2020-03-25T23:04:54+02:00",
         "createdBy": "stackhpc-doug",
         "expires": "0001-01-01T00:00:00Z",
-        "slug": "rabbitmq",
+        "slug": "openstack",
         "type": "db",
-        "updated": "2020-03-25T22:32:11+02:00",
+        "updated": "2020-03-26T18:37:16+02:00",
         "updatedBy": "stackhpc-doug",
         "version": 5
     }

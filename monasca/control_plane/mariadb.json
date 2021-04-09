@@ -1,0 +1,2361 @@
+{
+    "meta": {
+        "type": "db",
+        "canSave": true,
+        "canEdit": true,
+        "canStar": true,
+        "slug": "mariadb",
+        "expires": "0001-01-01T00:00:00Z",
+        "created": "2020-07-23T23:03:25+02:00",
+        "updated": "2020-07-28T19:08:52+02:00",
+        "updatedBy": "stig",
+        "createdBy": "stig",
+        "version": 24
+    },
+    "dashboard": {
+        "annotations": {
+            "list": []
+        },
+        "editable": true,
+        "gnetId": null,
+        "graphTooltip": 0,
+        "hideControls": false,
+        "id": null,
+        "links": [],
+        "refresh": false,
+        "rows": [
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 15,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "frontend",
+                                        "value": "mariadb"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "haproxy_frontend_current_sessions",
+                                "period": "30",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "API Connections",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": true,
+                "title": "Volume",
+                "titleSize": "h1"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 4,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "minSpan": null,
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": null,
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-1",
+                                "value": "spsrc-controller-1"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "select"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "commit"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "D"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "insert"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "C"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "rollback"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "B"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "delete"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "E"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Queries by type - $controller - stacked",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 0,
+                        "id": 11,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-1",
+                                "value": "spsrc-controller-1"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "Ingress",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "haproxy_backend_bytes_in_total_rate",
+                                "period": "30",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "none",
+                                "alias": "Egress",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "haproxy_backend_bytes_out_total_rate",
+                                "period": "30",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Network Traffic - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 0,
+                        "id": 19,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-1",
+                                "value": "spsrc-controller-1"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_threads_running",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Threads Running - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": "controller",
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": true,
+                "title": "Volume - $controller",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 21,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "minSpan": null,
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": null,
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-2",
+                                "value": "spsrc-controller-2"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "select"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "commit"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "D"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "insert"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "C"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "rollback"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "B"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "delete"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "E"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Queries by type - $controller - stacked",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 0,
+                        "id": 22,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-2",
+                                "value": "spsrc-controller-2"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "Ingress",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "haproxy_backend_bytes_in_total_rate",
+                                "period": "30",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "none",
+                                "alias": "Egress",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "haproxy_backend_bytes_out_total_rate",
+                                "period": "30",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Network Traffic - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 0,
+                        "id": 23,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-2",
+                                "value": "spsrc-controller-2"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_threads_running",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Threads Running - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": 1595954389675,
+                "repeatRowId": 2,
+                "showTitle": true,
+                "title": "Volume - $controller",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 24,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "minSpan": null,
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": null,
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-3",
+                                "value": "spsrc-controller-3"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "select"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "commit"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "D"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "insert"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "C"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "rollback"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "B"
+                            },
+                            {
+                                "aggregator": "avg",
+                                "alias": "@command",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    },
+                                    {
+                                        "key": "command",
+                                        "value": "delete"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_commands_total_rate",
+                                "period": "60",
+                                "refId": "E"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Queries by type - $controller - stacked",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 0,
+                        "id": 25,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-3",
+                                "value": "spsrc-controller-3"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "Ingress",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "haproxy_backend_bytes_in_total_rate",
+                                "period": "30",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "none",
+                                "alias": "Egress",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "haproxy_backend_bytes_out_total_rate",
+                                "period": "30",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Network Traffic - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 0,
+                        "id": 26,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": false,
+                            "show": false,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 2,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-3",
+                                "value": "spsrc-controller-3"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_threads_running",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Threads Running - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": 1595954389675,
+                "repeatRowId": 2,
+                "showTitle": true,
+                "title": "Volume - $controller",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 8,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_memory_used",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Memory usage",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 7,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_innodb_num_open_files",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Open files",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 30,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "haproxy_backend_current_queue",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "TCP Connection Queue",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 9,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_slow_queries",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Slow queries",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 5,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "reads - @hostname",
+                                "dimensions": [],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_innodb_data_pending_reads",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Pending Read Ops",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 6,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "reads - @hostname",
+                                "dimensions": [],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_innodb_data_pending_writes",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Pending Write Ops",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": true,
+                "title": "Saturation",
+                "titleSize": "h1"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 1,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "minSpan": 4,
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": "controller",
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-1",
+                                "value": "spsrc-controller-1"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "data bytes",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_innodb_buffer_pool_bytes_data",
+                                "period": "300",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "none",
+                                "alias": "dirty bytes",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_innodb_buffer_pool_bytes_dirty",
+                                "period": "300",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Buffer pool size - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 27,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "minSpan": 4,
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": null,
+                        "repeatIteration": 1595954389675,
+                        "repeatPanelId": 1,
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-2",
+                                "value": "spsrc-controller-2"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "data bytes",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_innodb_buffer_pool_bytes_data",
+                                "period": "300",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "none",
+                                "alias": "dirty bytes",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_innodb_buffer_pool_bytes_dirty",
+                                "period": "300",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Buffer pool size - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 28,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "minSpan": 4,
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "repeat": null,
+                        "repeatIteration": 1595954389675,
+                        "repeatPanelId": 1,
+                        "scopedVars": {
+                            "controller": {
+                                "selected": true,
+                                "text": "spsrc-controller-3",
+                                "value": "spsrc-controller-3"
+                            }
+                        },
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "data bytes",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_innodb_buffer_pool_bytes_data",
+                                "period": "300",
+                                "refId": "A"
+                            },
+                            {
+                                "aggregator": "none",
+                                "alias": "dirty bytes",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$controller"
+                                    }
+                                ],
+                                "error": "",
+                                "group": false,
+                                "metric": "mysql_global_status_innodb_buffer_pool_bytes_dirty",
+                                "period": "300",
+                                "refId": "B"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Buffer pool size - $controller",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "bytes",
+                                "label": "",
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 20,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "haproxy_backend_response_errors_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "API Error Responses",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 29,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": false,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "backend",
+                                        "value": "mariadb"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "haproxy_backend_retry_warnings_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "API Retry Warnings",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 10,
+                        "legend": {
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 4,
+                        "stack": true,
+                        "steppedLine": true,
+                        "targets": [
+                            {
+                                "aggregator": "none",
+                                "alias": "@error",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "spsrc-controller-1"
+                                    }
+                                ],
+                                "error": "",
+                                "group": true,
+                                "metric": "mysql_global_status_connection_errors_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "TCP Connection Errors - spsrc-controller-1",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 2,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": "0",
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": true,
+                "title": "Errors",
+                "titleSize": "h1"
+            }
+        ],
+        "schemaVersion": 14,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+            "list": [
+                {
+                    "allValue": null,
+                    "current": {
+                        "text": "spsrc-controller-1 + spsrc-controller-2 + spsrc-controller-3",
+                        "value": [
+                            "spsrc-controller-1",
+                            "spsrc-controller-2",
+                            "spsrc-controller-3"
+                        ]
+                    },
+                    "hide": 0,
+                    "includeAll": false,
+                    "label": null,
+                    "multi": true,
+                    "name": "controller",
+                    "options": [
+                        {
+                            "selected": true,
+                            "text": "spsrc-controller-1",
+                            "value": "spsrc-controller-1"
+                        },
+                        {
+                            "selected": true,
+                            "text": "spsrc-controller-2",
+                            "value": "spsrc-controller-2"
+                        },
+                        {
+                            "selected": true,
+                            "text": "spsrc-controller-3",
+                            "value": "spsrc-controller-3"
+                        }
+                    ],
+                    "query": "spsrc-controller-1,spsrc-controller-2,spsrc-controller-3",
+                    "type": "custom"
+                }
+            ]
+        },
+        "time": {
+            "from": "now-1h",
+            "to": "now"
+        },
+        "timepicker": {
+            "refresh_intervals": [
+                "5s",
+                "10s",
+                "30s",
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "2h",
+                "1d"
+            ],
+            "time_options": [
+                "5m",
+                "15m",
+                "1h",
+                "6h",
+                "12h",
+                "24h",
+                "2d",
+                "7d",
+                "30d"
+            ]
+        },
+        "timezone": "browser",
+        "title": "MariaDB",
+        "version": 24
+    }
+}

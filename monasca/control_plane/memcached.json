@@ -1,4 +1,17 @@
 {
+    "meta": {
+        "type": "db",
+        "canSave": true,
+        "canEdit": true,
+        "canStar": true,
+        "slug": "memcached",
+        "expires": "0001-01-01T00:00:00Z",
+        "created": "2020-07-23T15:41:00+02:00",
+        "updated": "2020-07-23T15:52:01+02:00",
+        "updatedBy": "stig",
+        "createdBy": "stig",
+        "version": 1
+    },
     "dashboard": {
         "annotations": {
             "list": []
@@ -9,106 +22,15 @@
         "hideControls": false,
         "id": null,
         "links": [],
-        "refresh": false,
         "rows": [
             {
                 "collapse": false,
-                "height": 316,
+                "height": 250,
                 "panels": [
                     {
                         "aliasColors": {},
                         "bars": false,
                         "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 1,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 12,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "@exchange@@hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "exchange",
-                                        "value": "$all"
-                                    },
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "group": false,
-                                "metric": "rabbitmq.exchange.messages.published_rate",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Publish Rate",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "hertz",
-                                "label": "",
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
                         "fill": 1,
                         "id": 2,
                         "legend": {
@@ -137,19 +59,15 @@
                         "targets": [
                             {
                                 "aggregator": "avg",
-                                "alias": "@exchange@@hostname",
+                                "alias": "@hostname",
                                 "dimensions": [
-                                    {
-                                        "key": "exchange",
-                                        "value": "$all"
-                                    },
                                     {
                                         "key": "hostname",
                                         "value": "$all"
                                     }
                                 ],
                                 "error": "",
-                                "metric": "rabbitmq.exchange.messages.received_rate",
+                                "metric": "memcached_up",
                                 "period": "300",
                                 "refId": "A"
                             }
@@ -157,206 +75,8 @@
                         "thresholds": [],
                         "timeFrom": null,
                         "timeShift": null,
-                        "title": "Receive Rate",
+                        "title": "Reachable servers",
                         "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "hertz",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {
-                            "redeliver_rate": "#BF1B00"
-                        },
-                        "bars": false,
-                        "datasource": "Monasca API",
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 3,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 12,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "avg",
-                                "alias": "deliver_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.deliver_rate",
-                                "period": "300",
-                                "refId": "A"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "alias": "publish_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.publish_rate",
-                                "period": "300",
-                                "refId": "B"
-                            },
-                            {
-                                "aggregator": "avg",
-                                "alias": "redeliver_rate @hostname",
-                                "dimensions": [
-                                    {
-                                        "key": "hostname",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.redeliver_rate",
-                                "period": "300",
-                                "refId": "C"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Queue Message Rates (All Queues)",
-                        "tooltip": {
-                            "msResolution": false,
-                            "shared": true,
-                            "sort": 0,
-                            "value_type": "individual"
-                        },
-                        "type": "graph",
-                        "xaxis": {
-                            "mode": "time",
-                            "name": null,
-                            "show": true,
-                            "values": []
-                        },
-                        "yaxes": [
-                            {
-                                "format": "hertz",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": "0",
-                                "show": true
-                            },
-                            {
-                                "format": "short",
-                                "label": null,
-                                "logBase": 1,
-                                "max": null,
-                                "min": null,
-                                "show": true
-                            }
-                        ]
-                    },
-                    {
-                        "aliasColors": {},
-                        "bars": false,
-                        "datasource": null,
-                        "editable": true,
-                        "error": false,
-                        "fill": 1,
-                        "id": 24,
-                        "legend": {
-                            "alignAsTable": true,
-                            "avg": false,
-                            "current": false,
-                            "hideZero": true,
-                            "max": false,
-                            "min": false,
-                            "rightSide": true,
-                            "show": true,
-                            "total": false,
-                            "values": false
-                        },
-                        "lines": true,
-                        "linewidth": 1,
-                        "links": [],
-                        "nullPointMode": "connected",
-                        "percentage": false,
-                        "pointradius": 5,
-                        "points": false,
-                        "renderer": "flot",
-                        "seriesOverrides": [],
-                        "span": 12,
-                        "stack": false,
-                        "steppedLine": false,
-                        "targets": [
-                            {
-                                "aggregator": "none",
-                                "alias": "@queue queue",
-                                "dimensions": [
-                                    {
-                                        "key": "queue",
-                                        "value": "$all"
-                                    }
-                                ],
-                                "error": "",
-                                "metric": "rabbitmq.queue.messages.unacknowledged",
-                                "period": "300",
-                                "refId": "A"
-                            }
-                        ],
-                        "thresholds": [],
-                        "timeFrom": null,
-                        "timeShift": null,
-                        "title": "Unacknowledged messages in queue",
-                        "tooltip": {
-                            "msResolution": false,
                             "shared": true,
                             "sort": 0,
                             "value_type": "individual"
@@ -392,7 +112,287 @@
                 "repeatIteration": null,
                 "repeatRowId": null,
                 "showTitle": false,
-                "title": "RabbitMQ Metrics",
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": "250px",
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": "Monasca API",
+                        "fill": 1,
+                        "id": 1,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "connected",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 12,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname",
+                                "dimensions": [
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "memcached_current_connections",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Current connections",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
+                "titleSize": "h6"
+            },
+            {
+                "collapse": false,
+                "height": 250,
+                "panels": [
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 3,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname / @command",
+                                "dimensions": [
+                                    {
+                                        "key": "command",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "status",
+                                        "value": "hit"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "memcached_commands_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Request statistics - hits",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    },
+                    {
+                        "aliasColors": {},
+                        "bars": false,
+                        "datasource": null,
+                        "fill": 1,
+                        "id": 4,
+                        "legend": {
+                            "alignAsTable": true,
+                            "avg": false,
+                            "current": false,
+                            "max": false,
+                            "min": false,
+                            "rightSide": true,
+                            "show": true,
+                            "total": false,
+                            "values": false
+                        },
+                        "lines": true,
+                        "linewidth": 1,
+                        "links": [],
+                        "nullPointMode": "null",
+                        "percentage": false,
+                        "pointradius": 5,
+                        "points": false,
+                        "renderer": "flot",
+                        "seriesOverrides": [],
+                        "span": 6,
+                        "stack": false,
+                        "steppedLine": false,
+                        "targets": [
+                            {
+                                "aggregator": "avg",
+                                "alias": "@hostname / @command",
+                                "dimensions": [
+                                    {
+                                        "key": "command",
+                                        "value": "$all"
+                                    },
+                                    {
+                                        "key": "status",
+                                        "value": "miss"
+                                    },
+                                    {
+                                        "key": "hostname",
+                                        "value": "$all"
+                                    }
+                                ],
+                                "error": "",
+                                "metric": "memcached_commands_total_rate",
+                                "period": "300",
+                                "refId": "A"
+                            }
+                        ],
+                        "thresholds": [],
+                        "timeFrom": null,
+                        "timeShift": null,
+                        "title": "Request statistics - misses",
+                        "tooltip": {
+                            "shared": true,
+                            "sort": 0,
+                            "value_type": "individual"
+                        },
+                        "type": "graph",
+                        "xaxis": {
+                            "mode": "time",
+                            "name": null,
+                            "show": true,
+                            "values": []
+                        },
+                        "yaxes": [
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            },
+                            {
+                                "format": "short",
+                                "label": null,
+                                "logBase": 1,
+                                "max": null,
+                                "min": null,
+                                "show": true
+                            }
+                        ]
+                    }
+                ],
+                "repeat": null,
+                "repeatIteration": null,
+                "repeatRowId": null,
+                "showTitle": false,
+                "title": "Dashboard Row",
                 "titleSize": "h6"
             }
         ],
@@ -403,7 +403,7 @@
             "list": []
         },
         "time": {
-            "from": "now-1h",
+            "from": "now-24h",
             "to": "now"
         },
         "timepicker": {
@@ -432,20 +432,7 @@
             ]
         },
         "timezone": "browser",
-        "title": "RabbitMQ",
-        "version": 5
-    },
-    "meta": {
-        "canEdit": true,
-        "canSave": true,
-        "canStar": true,
-        "created": "2020-03-17T18:54:29+02:00",
-        "createdBy": "stackhpc-doug",
-        "expires": "0001-01-01T00:00:00Z",
-        "slug": "rabbitmq",
-        "type": "db",
-        "updated": "2020-03-25T22:32:11+02:00",
-        "updatedBy": "stackhpc-doug",
-        "version": 5
+        "title": "Memcached",
+        "version": 1
     }
 }
